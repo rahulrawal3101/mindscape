@@ -1,0 +1,1 @@
+export const MONGU_URL = 'mongodb+srv://rahulrawal:RahulRawal@cluster0.drbijce.mongodb.net/positivebrain?retryWrites=true&w=majority';
