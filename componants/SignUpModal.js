@@ -25,7 +25,17 @@ const SignUpModal = ({ open, setOpen }) => {
     };
     console.log(info)
     const handleClose = () => {
-        setOpen(false)
+        setOpen(false);
+        setInfo(
+            {
+                name: '',
+                age: '',
+                childAge: '',
+                location: '',
+                comeFrom: ''
+            }
+        )
+
     };
 
     const submitHandler = async () => {
