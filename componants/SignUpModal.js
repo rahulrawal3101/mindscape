@@ -86,14 +86,14 @@ const SignUpModal = ({ open, setOpen }) => {
             >
                 <Grid container sx={{ height: 'fit-content', width: '500px', display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
                     <Grid item xs={12} sx={{ borderRadius: '19px', bgcolor: 'white', border: '8px double #0f3b62' }}>
-                        <Grid container sx={{ p: '10px' }}>
+                        <Grid container sx={{ p: '10px', }}>
                             <Grid item xs={12}>
                                 <Typography sx={{ fontSize: '28px', color: '#0f3b62', textAlign: 'center', fontWeight: 'bold' }}>Connect With Us</Typography>
                             </Grid>
                             <Divider sx={{ bgcolor: '#0f3b62', mt: '8px', width: '100%', height: '2px' }} />
 
 
-                            <Grid container sx={{ mt: '2px', p: '10px' }}>
+                            <Grid container sx={{ mt: '2px', p: '5px', overflowY:'scroll',height:'400px' }}>
                                 <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'light', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Enter your Name</Typography>
                                 </Grid>
@@ -160,15 +160,16 @@ const SignUpModal = ({ open, setOpen }) => {
 
                                 </Grid>
 
-                                <Grid item xs={12} sx={{ display: 'flex', alignItems: 'center', mt: '20px', pb: '10px', justifyContent: 'center' }}>
-                                    <Button variant='contained' sx={{ fontSize: '20px', width: '150px', bgcolor: 'white', fontWeight: 'bold', fontFamily: 'cursive', color: '#0f3b62', border: '9px double #0f3b62', borderRadius: '16px', textTransform: 'capitalize', '&:hover': { bgcolor: 'white', color: 'green', fontFamily: 'cursive', color: '#0f3b62' } }} onClick={submitHandler} >submit</Button>
-                                </Grid>
+                               
 
 
 
                             </Grid>
+                            <Grid item xs={12} sx={{ display: 'flex', alignItems: 'center', mt: '10px', pb: '5px', justifyContent: 'center' }}>
+                                    <Button variant='contained' sx={{ fontSize: '20px', width: '150px', bgcolor: 'white', fontWeight: 'bold', fontFamily: 'cursive', color: '#0f3b62', border: '9px double #0f3b62', borderRadius: '16px', textTransform: 'capitalize', '&:hover': { bgcolor: 'white', color: 'green', fontFamily: 'cursive', color: '#0f3b62' } }} onClick={submitHandler} >submit</Button>
+                                </Grid>
                             <Divider sx={{ bgcolor: '#0f3b62',  width: '100%', height: '2px' }} />
-                            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'right', alignItems: 'center', p: '10px' }}>
+                            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'right', alignItems: 'center', p: '5px' }}>
                                 <Typography sx={{ fontSize: '23px', color: 'crimson', cursor: 'pointer', fontWeight: 'bold' }} onClick={handleClose}>Close</Typography>
 
 
