@@ -87,7 +87,7 @@ const SignUpModal = ({ open, setOpen }) => {
                 <Grid container sx={{ height: 'fit-content', width: '500px', display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
                     <Grid item xs={12} sx={{ borderRadius: '19px', bgcolor: 'white', border: '8px double #0f3b62' }}>
                         <Grid container sx={{ p: '10px' }}>
-                            <Grid item xs={12} sx={{ p: '8px', }}>
+                            <Grid item xs={12}>
                                 <Typography sx={{ fontSize: '28px', color: '#0f3b62', textAlign: 'center', fontWeight: 'bold' }}>Connect With Us</Typography>
                             </Grid>
                             <Divider sx={{ bgcolor: '#0f3b62', mt: '8px', width: '100%', height: '2px' }} />
@@ -97,7 +97,7 @@ const SignUpModal = ({ open, setOpen }) => {
                                 <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'light', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Enter your Name</Typography>
                                 </Grid>
-                                <Grid item xs={12} sx={{ mt: '5px' }} >
+                                <Grid item xs={12} sx={{ mt: '2px' }} >
 
                                     <TextField placeholder='Enter your Name..' fullWidth size='small' sx={{ fontSize: '15px', }} onChange={infoHandler} name='name' value={info.name} color='error' />
 
@@ -107,7 +107,7 @@ const SignUpModal = ({ open, setOpen }) => {
                                 <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'light', alignItems: 'center', mt: '10px' }}>
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Enter Your Age</Typography>
                                 </Grid>
-                                <Grid item xs={12} sx={{ mt: '5px' }} >
+                                <Grid item xs={12} sx={{ mt: '2px' }} >
                                     <TextField placeholder='Enter Your Age..' type='number' fullWidth size='small' sx={{ fontSize: '15px' }} onChange={infoHandler} name='age' value={info.age} color='error' />
 
                                 </Grid>
@@ -115,7 +115,7 @@ const SignUpModal = ({ open, setOpen }) => {
                                 <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'light', alignItems: 'center', mt: '10px' }}>
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Enter Your Child's Age</Typography>
                                 </Grid>
-                                <Grid item xs={12} sx={{ mt: '5px' }} >
+                                <Grid item xs={12} sx={{ mt: '2px' }} >
                                     <TextField placeholder='Enter Your Child Age..' type='number' fullWidth size='small' sx={{ fontSize: '15px' }} onChange={infoHandler} name='childAge' value={info.childAge} color='error' />
 
                                 </Grid>
@@ -124,7 +124,7 @@ const SignUpModal = ({ open, setOpen }) => {
                                 <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'light', alignItems: 'center', mt: '10px' }}>
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Your Location</Typography>
                                 </Grid>
-                                <Grid item xs={12} sx={{ mt: '5px' }} >
+                                <Grid item xs={12} sx={{ mt: '2px' }} >
                                     <TextField placeholder='Your Location..' fullWidth size='small' sx={{ fontSize: '15px' }} onChange={infoHandler} name='location' value={info.location} color='error' />
 
                                 </Grid>
@@ -132,7 +132,7 @@ const SignUpModal = ({ open, setOpen }) => {
                                 <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'light', alignItems: 'center', mt: '10px' }}>
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Where did you come from</Typography>
                                 </Grid>
-                                <Grid item xs={12} sx={{ mt: '5px' }}>
+                                <Grid item xs={12} sx={{ mt: '2px' }}>
                                     <FormControl fullWidth size='small' color='error'>
 
                                         <Select
@@ -151,10 +151,10 @@ const SignUpModal = ({ open, setOpen }) => {
                                     </FormControl>
                                 </Grid>
 
-                                <Grid item xs={12} sx={{ mt: '15px', display: show == true ? 'flex' : 'none', justifyContent: 'light', alignItems: 'center' }}>
+                                <Grid item xs={12} sx={{ mt: '10px', display: show == true ? 'flex' : 'none', justifyContent: 'light', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Enter Others Details</Typography>
                                 </Grid>
-                                <Grid item xs={12} sx={{ mt: '5px', display: show == true ? 'flex' : 'none' }} >
+                                <Grid item xs={12} sx={{ mt: '2px', display: show == true ? 'flex' : 'none' }} >
 
                                     <TextField placeholder='Enter Others Details..' fullWidth size='small' sx={{ fontSize: '15px', }} onChange={infoHandler} name='otherDetails' value={info.otherDetails} color='error' />
 
@@ -167,7 +167,7 @@ const SignUpModal = ({ open, setOpen }) => {
 
 
                             </Grid>
-                            <Divider sx={{ bgcolor: '#0f3b62', mt: '10px', width: '100%', height: '2px' }} />
+                            <Divider sx={{ bgcolor: '#0f3b62',  width: '100%', height: '2px' }} />
                             <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'right', alignItems: 'center', p: '10px' }}>
                                 <Typography sx={{ fontSize: '23px', color: 'crimson', cursor: 'pointer', fontWeight: 'bold' }} onClick={handleClose}>Close</Typography>
 

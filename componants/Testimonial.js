@@ -13,7 +13,7 @@ const Testimonial = () => {
                 <Grid item xs={12} sx={{mb:'20px'}}>
                     <Typography sx={{ fontSize:{lg:'45px', md:'45px', sm:'40px', xs:'35px'}, fontWeight: 'bold', fontFamily: 'sans-serif', textAlign: 'center', color: 'black' }}>Testimonial</Typography>
                 </Grid>
-                <Grid item xs={12} sm={12} md={6} lg={3} >
+                <Grid item xs={11} sm={8} md={6} lg={3} >
                     <Card sx={{ m: "15px", boxShadow: '3px 4px 21px 1px rgba(0,0,0,0.75)', p: '10px 5px' }} elevation={5}  >
 
 
@@ -36,7 +36,7 @@ const Testimonial = () => {
 
 
 
-                <Grid item xs={12} sm={12} md={6} lg={3}>
+                <Grid item xs={11} sm={8} md={6} lg={3}>
                     <Card sx={{ m: "15px", boxShadow: '3px 4px 21px 1px rgba(0,0,0,0.75)', p: '10px 5px' }} elevation={5}  >
 
 
@@ -57,7 +57,7 @@ const Testimonial = () => {
                     </Card>
                 </Grid>
 
-                <Grid item xs={12} sm={12} md={6} lg={3}>
+                <Grid item xs={11} sm={8} md={6} lg={3}>
                     <Card sx={{ m: "15px", boxShadow: '3px 4px 21px 1px rgba(0,0,0,0.75)', p: '10px 5px' }} elevation={5}  >
 
 

@@ -12,7 +12,7 @@ const Form = () => {
     }
     return (
         <>
-            <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: '#f7f7f7', mt:'40px' }}>
+            <Grid container sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: '#f7f7f7', }}>
 
 
                 <Grid container sx={{ bgcolor: 'black', height:{lg: '200px',md:'230px', sm:'290px', xs:'310px'}, justifyContent: 'center', alignItems: 'center', p:'5px' }}>
