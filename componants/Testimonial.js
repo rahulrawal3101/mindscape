@@ -19,7 +19,7 @@ const Testimonial = () => {
 
                         <Box sx={{ width: '100%', height: {lg:'250px', md:'300px', sm:'300px',xs:'300px'}, display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
 
-                            <Image src={card1} alt='card1' style={{ width: '94%', height: '100%', objectFit: 'cover', marginTop: '20px' }} />
+                            <Image src={card1} alt='card1' style={{ width: '94%', height: '100%', objectFit: 'cover', marginTop: '20px', }} />
                         </Box>
                         <CardContent >
                             <Typography sx={{ fontSize: "25px", fontWeight: "800", color: 'black', fontFamily: 'sans-serif' }} >

@@ -83,7 +83,6 @@ const AboutUs = () => {
 
                         <Grid item lg={5} md={5} sm={11} xs={11} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mt: { lg: '0px', md: '0px', sm: '10px', xs: '10px' } }}>
                             <Box sx={{ width: { lg: '500px', md: '500px', sm: '400px', xs: '400px' }, height: { lg: '400px', md: '400px', sm: '300px', xs: '300px' }, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-
                                 <Image src={kid} alt='kids' style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                             </Box>
 
