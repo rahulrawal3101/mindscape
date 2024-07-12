@@ -4,6 +4,10 @@ const postiveSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    email:{
+        type:String,
+        required:true
+    },
     age: {
         type: Number,
         required: true
@@ -11,6 +15,12 @@ const postiveSchema = new mongoose.Schema({
     childAge: {
         type: Number,
         required: true
+    },
+    phone:{
+        type:Number,
+        required:false,
+        default:'0000000000',
+        
     },
     location: {
         type: String,
@@ -22,7 +32,8 @@ const postiveSchema = new mongoose.Schema({
     },
     otherDetails:{
         type:String,
-        required:true
+        required:false,
+        default:'No Connection'
     }
 }, { timestamps: true }
 )

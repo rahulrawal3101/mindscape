@@ -29,8 +29,10 @@ const SignUpModal = ({ open, setOpen }) => {
         setInfo(
             {
                 name: '',
+                email:'',
                 age: '',
                 childAge: '',
+                phone:'',
                 location: '',
                 comeFrom: ''
             }
@@ -39,7 +41,7 @@ const SignUpModal = ({ open, setOpen }) => {
     };
 
     const submitHandler = async () => {
-        if (info.name && info.age && info.childAge && info.location && info.comeFrom) {
+        if (info.name && info.email && info.age && info.childAge && info.location && info.comeFrom) {
             try {
                 const res = await axios.post('/api/positive', info);
                 console.log(res)
@@ -58,15 +60,16 @@ const SignUpModal = ({ open, setOpen }) => {
                 } else {
                     alert(res.data.message)
                 }
-
+    
             } catch (err) {
                 console.log(err);
                 alert(err.massage);
             }
+           
         }else {
-            alert('Fill the required fields');
+            alert('Fill the Required Fields');
         }
-
+       
 
     }
 
@@ -84,7 +87,8 @@ const SignUpModal = ({ open, setOpen }) => {
             setShow(false)
         }
         // console.log(ele)
-    }
+    };
+    console.log(info)
     return (
         <>
             <Modal
@@ -109,7 +113,16 @@ const SignUpModal = ({ open, setOpen }) => {
                                 </Grid>
                                 <Grid item xs={12} sx={{ mt: '2px' }} >
 
-                                    <TextField placeholder='Enter your Name..' fullWidth size='small' sx={{ fontSize: '15px', }} onChange={infoHandler} name='name' value={info.name} color='error' />
+                                    <TextField placeholder='Enter your Name..'  fullWidth size='small' sx={{ fontSize: '15px', }} onChange={infoHandler} name='name' value={info.name} color='error' />
+
+                                </Grid>
+
+                                <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'light', alignItems: 'center',mt: '10px' }}>
+                                    <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Enter your Email</Typography>
+                                </Grid>
+                                <Grid item xs={12} sx={{ mt: '2px' }} >
+
+                                    <TextField placeholder='Enter your Email..'  fullWidth size='small' sx={{ fontSize: '15px', }} onChange={infoHandler} name='email' value={info.email} color='error' />
 
                                 </Grid>
 
@@ -126,7 +139,15 @@ const SignUpModal = ({ open, setOpen }) => {
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Enter Your Child's Age</Typography>
                                 </Grid>
                                 <Grid item xs={12} sx={{ mt: '2px' }} >
-                                    <TextField placeholder='Enter Your Child Age..' type='number' fullWidth size='small' sx={{ fontSize: '15px' }} onChange={infoHandler} name='childAge' value={info.childAge} color='error' />
+                                    <TextField placeholder='Enter Your Child Age..'  type='number' fullWidth size='small' sx={{ fontSize: '15px' }} onChange={infoHandler} name='childAge' value={info.childAge} color='error' />
+
+                                </Grid>
+
+                                <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'light', alignItems: 'center', mt: '10px' }}>
+                                    <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Enter Your Phone No</Typography>
+                                </Grid>
+                                <Grid item xs={12} sx={{ mt: '2px' }} >
+                                    <TextField placeholder='Enter Your Phone No..' type='number' fullWidth size='small' sx={{ fontSize: '15px' }} onChange={infoHandler} name='phone' value={info.phone} color='error' />
 
                                 </Grid>
 
@@ -135,7 +156,7 @@ const SignUpModal = ({ open, setOpen }) => {
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Your Location</Typography>
                                 </Grid>
                                 <Grid item xs={12} sx={{ mt: '2px' }} >
-                                    <TextField placeholder='Your Location..' fullWidth size='small' sx={{ fontSize: '15px' }} onChange={infoHandler} name='location' value={info.location} color='error' />
+                                    <TextField placeholder='Your Location..'  fullWidth size='small' sx={{ fontSize: '15px' }} onChange={infoHandler} name='location' value={info.location} color='error' />
 
                                 </Grid>
 
@@ -143,7 +164,7 @@ const SignUpModal = ({ open, setOpen }) => {
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Where did you come from</Typography>
                                 </Grid>
                                 <Grid item xs={12} sx={{ mt: '2px' }}>
-                                    <FormControl fullWidth size='small' color='error'>
+                                    <FormControl fullWidth size='small' color='error' >
 
                                         <Select
                                             labelId="demo-simple-select-label"
