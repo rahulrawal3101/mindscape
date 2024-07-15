@@ -2,16 +2,21 @@
 import { Button, Divider, FormControl, Grid, MenuItem, Modal, Select, TextField, Typography } from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
+import './master.css'
 
 
-const SignUpModal = ({ open, setOpen }) => {
+const SignUpModal = ({ open, setOpen, }) => {
 
-    const [show, setShow] = useState(false)
+    const [show, setShow] = useState(false);
+    const [showLoader, setShowLoader] = useState(false)
     const [info, setInfo] = useState(
         {
             name: '',
+            email: '',
             age: '',
             childAge: '',
+            phone: '',
             location: '',
             comeFrom: '',
             otherDetails: '',
@@ -26,64 +31,109 @@ const SignUpModal = ({ open, setOpen }) => {
     console.log(info)
     const handleClose = () => {
         setOpen(false);
+        setShowLoader(false);
         setInfo(
             {
                 name: '',
-                email:'',
+                email: '',
                 age: '',
                 childAge: '',
-                phone:'',
+                phone: '',
                 location: '',
-                comeFrom: ''
+                comeFrom: '',
+                otherDetails: '',
             }
         )
 
     };
 
+    // const submitHandler = async () => {
+    //     if (info.name && info.email && info.age && info.childAge && info.location && info.comeFrom) {
+    //         setShowLoader(true);
+    //         try {
+    //             const res = await axios.post('/api/positive', info);
+    //             console.log(res)
+    //             if (res.data.message = 'Saved Your Details') {
+    //                 alert(res.data.message);
+    //                 setOpen(false);
+    //                 setInfo(
+    //                     {
+    //                         name: '',
+    //                         email: '',
+    //                         age: '',
+    //                         childAge: '',
+    //                         phone: '',
+    //                         location: '',
+    //                         comeFrom: '',
+    //                         otherDetails: '',
+    //                     }
+    //                 );
+    //                 setShowLoader(false)
+    //             }
+    //             if (res.data.message == 'This Email is Already Registered') {
+    //                 alert(res.data.message)
+    //             }
+    //             else {
+    //                 alert(res.data.message);
+    //                 setShowLoader(false)
+    //             }
+
+    //         } catch (err) {
+    //             console.log(err);
+    //             alert(err.massage);
+    //         }
+
+    //     } else {
+    //         alert('Fill the Required Fields');
+    //     }
+
+
+    // }
+
     const submitHandler = async () => {
         if (info.name && info.email && info.age && info.childAge && info.location && info.comeFrom) {
+            setShowLoader(true);
             try {
                 const res = await axios.post('/api/positive', info);
                 console.log(res)
-                if (res.data.message = 'Saved Your Details') {
+                if (res.data.message === 'Saved Your Details' || res.data.message === 'This Email is Already Registered') {
                     alert(res.data.message);
                     setOpen(false);
-                    setInfo(
-                        {
-                            name: '',
-                            age: '',
-                            childAge: '',
-                            location: '',
-                            comeFrom: ''
-                        }
-                    )
+                    setInfo({
+                        name: '',
+                        email: '',
+                        age: '',
+                        childAge: '',
+                        phone: '',
+                        location: '',
+                        comeFrom: '',
+                        otherDetails: '',
+                    });
                 } else {
-                    alert(res.data.message)
+                    alert(res.data.message);
                 }
-    
+                setShowLoader(false);
             } catch (err) {
                 console.log(err);
-                alert(err.massage);
+                alert(err.message);
+                setShowLoader(false);
             }
-           
-        }else {
+        } else {
             alert('Fill the Required Fields');
         }
-       
-
-    }
+    };
 
     const otherHandler = (ele) => {
-        if(ele == 'Others'){
+        if (ele == 'Others') {
             setShow(true)
         }
-        if(ele == 'Linkedin'){
+        if (ele == 'Linkedin') {
             setShow(false)
         }
-        if(ele == 'Youtube'){
+        if (ele == 'Youtube') {
             setShow(false)
         }
-        if(ele == 'Facebook'){
+        if (ele == 'Facebook') {
             setShow(false)
         }
         // console.log(ele)
@@ -94,6 +144,7 @@ const SignUpModal = ({ open, setOpen }) => {
             <Modal
                 open={open}
                 onClose={handleClose}
+                disableAutoFocus
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', bgcolor: 'rgba(0,0,0,0.1)', p: '10px' }}
@@ -107,22 +158,22 @@ const SignUpModal = ({ open, setOpen }) => {
                             <Divider sx={{ bgcolor: '#0f3b62', mt: '8px', width: '100%', height: '2px' }} />
 
 
-                            <Grid container sx={{ mt: '2px', p: '5px', overflowY:'scroll',height:'400px' }}>
+                            <Grid container className='resultScroll' sx={{ mt: '2px', p: '5px', overflowY: 'scroll', height: '400px' }}>
                                 <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'light', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Enter your Name</Typography>
                                 </Grid>
                                 <Grid item xs={12} sx={{ mt: '2px' }} >
 
-                                    <TextField placeholder='Enter your Name..'  fullWidth size='small' sx={{ fontSize: '15px', }} onChange={infoHandler} name='name' value={info.name} color='error' />
+                                    <TextField placeholder='Enter your Name..' fullWidth size='small' sx={{ fontSize: '15px', }} onChange={infoHandler} name='name' value={info.name} color='error' />
 
                                 </Grid>
 
-                                <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'light', alignItems: 'center',mt: '10px' }}>
+                                <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'light', alignItems: 'center', mt: '10px' }}>
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Enter your Email</Typography>
                                 </Grid>
                                 <Grid item xs={12} sx={{ mt: '2px' }} >
 
-                                    <TextField placeholder='Enter your Email..'  fullWidth size='small' sx={{ fontSize: '15px', }} onChange={infoHandler} name='email' value={info.email} color='error' />
+                                    <TextField placeholder='Enter your Email..' fullWidth size='small' sx={{ fontSize: '15px', }} onChange={infoHandler} name='email' value={info.email} color='error' />
 
                                 </Grid>
 
@@ -139,7 +190,7 @@ const SignUpModal = ({ open, setOpen }) => {
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Enter Your Child's Age</Typography>
                                 </Grid>
                                 <Grid item xs={12} sx={{ mt: '2px' }} >
-                                    <TextField placeholder='Enter Your Child Age..'  type='number' fullWidth size='small' sx={{ fontSize: '15px' }} onChange={infoHandler} name='childAge' value={info.childAge} color='error' />
+                                    <TextField placeholder='Enter Your Child Age..' type='number' fullWidth size='small' sx={{ fontSize: '15px' }} onChange={infoHandler} name='childAge' value={info.childAge} color='error' />
 
                                 </Grid>
 
@@ -156,7 +207,7 @@ const SignUpModal = ({ open, setOpen }) => {
                                     <Typography sx={{ fontSize: '17px', mr: '5px', color: '#0f3b62', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Your Location</Typography>
                                 </Grid>
                                 <Grid item xs={12} sx={{ mt: '2px' }} >
-                                    <TextField placeholder='Your Location..'  fullWidth size='small' sx={{ fontSize: '15px' }} onChange={infoHandler} name='location' value={info.location} color='error' />
+                                    <TextField placeholder='Your Location..' fullWidth size='small' sx={{ fontSize: '15px' }} onChange={infoHandler} name='location' value={info.location} color='error' />
 
                                 </Grid>
 
@@ -174,10 +225,10 @@ const SignUpModal = ({ open, setOpen }) => {
 
                                             onChange={infoHandler}
                                         >
-                                            <MenuItem value={'Facebook'} onClick={()=>{otherHandler('Facebook')}}>Facebook</MenuItem>
-                                            <MenuItem value={'Youtube'} onClick={()=>{otherHandler('Youtube')}}>Youtube</MenuItem>
-                                            <MenuItem value={'Linkedin'} onClick={()=>{otherHandler('Linkedin')}} >Linkedin</MenuItem>
-                                            <MenuItem value={'Others'} onClick={()=>{otherHandler('Others')}}>Others</MenuItem>
+                                            <MenuItem value={'Facebook'} onClick={() => { otherHandler('Facebook') }}>Facebook</MenuItem>
+                                            <MenuItem value={'Youtube'} onClick={() => { otherHandler('Youtube') }}>Youtube</MenuItem>
+                                            <MenuItem value={'Linkedin'} onClick={() => { otherHandler('Linkedin') }} >Linkedin</MenuItem>
+                                            <MenuItem value={'Others'} onClick={() => { otherHandler('Others') }}>Others</MenuItem>
                                         </Select>
                                     </FormControl>
                                 </Grid>
@@ -191,15 +242,19 @@ const SignUpModal = ({ open, setOpen }) => {
 
                                 </Grid>
 
-                               
+
 
 
 
                             </Grid>
                             <Grid item xs={12} sx={{ display: 'flex', alignItems: 'center', mt: '10px', pb: '5px', justifyContent: 'center' }}>
-                                    <Button variant='contained' sx={{ fontSize: '20px', width: '150px', bgcolor: 'white', fontWeight: 'bold', fontFamily: 'cursive', color: '#0f3b62', border: '9px double #0f3b62', borderRadius: '16px', textTransform: 'capitalize', '&:hover': { bgcolor: 'white', color: 'green', fontFamily: 'cursive', color: '#0f3b62' } }} onClick={submitHandler} >submit</Button>
-                                </Grid>
-                            <Divider sx={{ bgcolor: '#0f3b62',  width: '100%', height: '2px' }} />
+                                {
+                                    showLoader ?
+                                        <CircularProgress /> :
+                                        <Button variant='contained' sx={{ fontSize: '20px', width: '150px', bgcolor: 'white', fontWeight: 'bold', fontFamily: 'cursive', color: '#0f3b62', border: '9px double #0f3b62', borderRadius: '16px', textTransform: 'capitalize', '&:hover': { bgcolor: 'white', color: 'green', fontFamily: 'cursive', color: '#0f3b62' } }} onClick={submitHandler} >submit</Button>
+                                }
+                            </Grid>
+                            <Divider sx={{ bgcolor: '#0f3b62', width: '100%', height: '2px' }} />
                             <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'right', alignItems: 'center', p: '5px' }}>
                                 <Typography sx={{ fontSize: '23px', color: 'crimson', cursor: 'pointer', fontWeight: 'bold' }} onClick={handleClose}>Close</Typography>
 

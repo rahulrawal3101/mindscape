@@ -10,7 +10,7 @@ import kid1 from '../assets/kid2.png'
 const AboutUs = () => {
     return (
         <>
-            <Grid container sx={{ bgcolor: '#f7f7f7', justifyContent: 'center', alignItems: 'center' }}>
+            <Grid container sx={{ bgcolor: '#f7f7f7', justifyContent: 'center', alignItems: 'center',  }}>
 
                 <Grid container justifyContent="center" alignItems="center" style={{ minHeight: '100vh' }}>
                     <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', p: '5px' }}>
@@ -31,16 +31,17 @@ const AboutUs = () => {
                             }}
                         >
                             <video
+                                autoPlay
+                                muted
                                 controls
+                                loop
                                 preload="none"
                                 style={{
-                                    // position: 'absolute',
-                                    // top: 0,
-                                    // left: 0,
                                     width: '100%',
                                     height: '100%',
                                     objectFit: 'cover',
                                     borderRadius: '5px',
+
                                 }}
                             >
                                 <source src="/negvideo.mp4" type="video/mp4" />
@@ -63,9 +64,9 @@ const AboutUs = () => {
 
                         </Grid>
                         <Grid item lg={5} md={5} sm={11} xs={11} sx={{ mt: '30px', color: 'black', p: '20px', borderRadius: '10px' }} >
-                            <Typography sx={{ fontSize: { lg: '45px', md: '45px', sm: '40px', xs: '35px' }, fontWeight: 'bold', fontFamily: 'sans-serif', textAlign: 'center', color: 'black' }}>The Dangers of Ignoring <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black' , cursor:'pointer'}}>Mental Stamina</a></Typography>
-                            <Typography sx={{ fontSize: { lg: '22px', md: '17px', sm: '15px', xs: '15px' }, fontWeight: 'bold', fontFamily: 'cursive', textAlign: 'center', color: 'black', mt: '10px' }}>
-                                In today’s fast-paced <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor:'pointer' }}>digital world</a>, children’s ability to focus and think critically is often under threat. Ignoring these challenges can lead to long-term <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor:'pointer' }}>cognitive deficits</a> and poor <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor:'pointer' }}>academic performance</a>.
+                            <Typography sx={{ fontSize: { lg: '45px', md: '45px', sm: '40px', xs: '35px' }, fontWeight: 'bold', fontFamily: 'sans-serif', textAlign: 'center', color: 'black' }}>The Dangers of Ignoring <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor: 'pointer' }}>Mental Stamina</a></Typography>
+                            <Typography sx={{ fontSize: { lg: '22px', md: '17px', sm: '15px', xs: '15px' }, fontWeight: 'bold', fontFamily: 'sans-serif', textAlign: 'center', color: 'black', mt: '10px' }}>
+                                In today’s fast-paced <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor: 'pointer' }}>digital world</a>, children’s ability to focus and think critically is often under threat. Ignoring these challenges can lead to long-term <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor: 'pointer' }}>cognitive deficits</a> and poor <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor: 'pointer' }}>academic performance</a>.
 
                             </Typography>
 
@@ -76,7 +77,7 @@ const AboutUs = () => {
 
                         <Grid item lg={5} md={5} sm={11} xs={12} sx={{ mt: '30px', color: 'black', p: '20px', borderRadius: '10px', mt: { lg: '0px', md: '0px', sm: '10px', xs: '10px' } }} >
                             <Typography sx={{ fontSize: { lg: '45px', md: '45px', sm: '40px', xs: '35px' }, fontWeight: 'bold', fontFamily: 'sans-serif', textAlign: 'center', color: 'black' }}>Prevent the Downfall</Typography>
-                            <Typography sx={{ fontSize: { lg: '22px', md: '17px', sm: '15px', xs: '15px' }, fontWeight: 'bold', fontFamily: 'cursive', textAlign: 'center', color: 'black', mt: '10px' }}>Our <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor:'pointer' }}>educational game</a> is designed to combat <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor:'pointer' }}>digital distractions</a> and enhance <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor:'pointer' }}>cognitive abilities</a> through engaging and scientifically-proven activities.
+                            <Typography sx={{ fontSize: { lg: '22px', md: '17px', sm: '15px', xs: '15px' }, fontWeight: 'bold', fontFamily: 'sans-serif', textAlign: 'center', color: 'black', mt: '10px' }}>Our <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor: 'pointer' }}>educational game</a> is designed to combat <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor: 'pointer' }}>digital distractions</a> and enhance <a href='https://mindscape-delta.vercel.app/' style={{ textDecoration: 'none', color: 'black', cursor: 'pointer' }}>cognitive abilities</a> through engaging and scientifically-proven activities.
                             </Typography>
 
                         </Grid>
