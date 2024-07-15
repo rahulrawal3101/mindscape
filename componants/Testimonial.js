@@ -67,7 +67,7 @@ const Testimonial = () => {
                         </Box>
                         <CardContent >
                             <Typography sx={{ fontSize: "25px", fontWeight: "800", color: 'black', fontFamily: 'sans-serif' }} >
-                               Ritu Rai
+                               Tejasvi Bhargava
                             </Typography>
                             <Typography sx={{ fontSize: '15px', mt:'10px' }}>
                             My daughter's constant phone use is causing her to lose focus on important tasks. She used to be an avid reader and a curious learner, but now, she can barely concentrate on her schoolwork. I'm deeply concerned about the long-term effects this could have on her education and overall development. We need a solution that can help her break free from this digital addiction and rebuild her attention span. An interactive and educational game that promotes mental stamina would be a fantastic way to address this issue and help her thrive.                            </Typography>
