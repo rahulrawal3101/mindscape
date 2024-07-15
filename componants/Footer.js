@@ -9,6 +9,8 @@ const Footer = () => {
       <Grid container>
         <Grid item xs={12} sx={{ p: '10px', bgcolor: '#242222' }}>
           <Typography sx={{ fontFamily: 'sans-serif', textAlign: 'center', color: 'white' }}>Copyright © {date} MindScape. All rights reserved.</Typography>
+          <Typography sx={{ fontFamily: 'sans-serif', textAlign: 'center', color: 'white' }}>Copyright © {date} MindScape. All rights reserved.</Typography>
+
         </Grid>
       </Grid>
     </>
