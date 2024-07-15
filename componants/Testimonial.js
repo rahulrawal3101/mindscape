@@ -1,9 +1,6 @@
 'use client'
 import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import React from 'react';
-import card1 from '../assets/dotnetcard1.jpg';
-import card2 from '../assets/dotnetcard2.jpg';
-import card3 from '../assets/dotnetcard3.jpg';
 import Image from 'next/image';
 import pic1 from '../assets/pic1.jpg';
 import pic2 from '../assets/pic2.jpg';

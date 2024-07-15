@@ -24,7 +24,7 @@ const Header = () => {
                     <Typography sx={{ fontSize: {lg:'23px', md:'18px', sm:'16px', xs:'13px'}, color: '#e53935', fontWeight:900, fontFamily: 'sans-serif',textAlign:'center' }}>Are Digital Distractions Hurting Your Child's Focus and Cognitive Development?</Typography>
                 </Grid>
                 <Grid item lg={1} md={1.7} sm={2} xs={3} sx={{display:'flex', justifyContent:'right', alignItems:'center', }}>
-                    <Button variant='contained' sx={{textTransform:'capitalize', fontSize:{lg:'17px', md:'15px', sm:'14px', xs:'13px'},borderRadius:'7px', }} onClick={openForm}>Sign Up</Button>
+                    <Button variant='contained' sx={{textTransform:'capitalize', fontSize:{lg:'17px', md:'15px', sm:'14px', xs:'13px'},borderRadius:'7px',bgcolor:'#324fbe' ,'&:hover':{bgcolor:'#324fbe'}}} onClick={openForm}>Join Us</Button>
                 </Grid>
             </Grid>
             <SignUpModal open={open} setOpen={setOpen}/>
