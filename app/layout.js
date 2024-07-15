@@ -39,7 +39,7 @@ import React from 'react';
 const metadata = {
   title: "Mindscape",
   description: "Play exciting quiz games online and test your knowledge. Join our quiz community today!",
-  keywords: "quiz, game, online quiz, quiz game, trivia, knowledge test"
+  keywords: "Mental Stamina, digital world, cognitive deficits, academic performance, educational game,digital distractions,digital distractions,cognitive abilities,Enhanced Memory,Interactive games,memory retention,Critical Thinking,Puzzles and challenges,problem-solving skill,"
 };
 
 export default function RootLayout({ children }) {

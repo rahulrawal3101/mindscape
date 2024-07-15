@@ -24,22 +24,52 @@ const page = () => {
   //   return () => clearInterval(interval);
   // }, []);
 
+
+
+  // useEffect(() => {
+  //   // Run the function immediately
+  //   setOpen(true);
+
+  //   // Then set the interval to run every 30 seconds
+  //   const interval = setInterval(() => {
+  //     setOpen(prevOpen => {
+  //       if (!prevOpen) {
+  //         return true;
+  //       }
+  //       return prevOpen;
+  //     });
+  //   }, 40000);
+
+  //   return () => clearInterval(interval);
+  // }, []);
+
+
+
   useEffect(() => {
     // Run the function immediately
     setOpen(true);
 
-    // Then set the interval to run every 30 seconds
+    let count = 0;
+    const maxCount = 3;
+
+    // Then set the interval to run every 40 seconds
     const interval = setInterval(() => {
-      setOpen(prevOpen => {
-        if (!prevOpen) {
-          return true;
-        }
-        return prevOpen;
-      });
+      if (count < maxCount) {
+        setOpen(prevOpen => {
+          if (!prevOpen) {
+            return true;
+          }
+          return prevOpen;
+        });
+        count += 1;
+      } else {
+        clearInterval(interval);
+      }
     }, 40000);
 
     return () => clearInterval(interval);
   }, []);
+
 
   return (
     <>
